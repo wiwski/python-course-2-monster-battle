@@ -1,15 +1,14 @@
 import random 
 
-
 player_health = 100
 monster_health = 100
 
 print("Un monstre vous attaque, préparez-vous à attaquer.")
-while(player_health > 0 and monster_health > 0):
+while player_health > 0 and monster_health > 0:
     print(f"\nVous: {player_health}. Le monstre: {monster_health}")
     try:
         choice = int(input("[1] Attaquer\n[2] Bloquer\n"))
-        if not choice == 1 and not choice == 2:
+        if not choice in [1, 2]:
             raise ValueError
     except ValueError:
         print("Entrez une option valide.")
